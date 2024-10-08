@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="customer">
+	<!-- com.kitri.springmvc.dto.Customer -->
+	<select id="findCustomers" resultType="customer"> 
+	<![CDATA[
+	SELECT * FROM customer
+	]]>
+	</select>
+	
+	<!-- com.kitri.springmvc.dto.Customer -->
+	<!-- int(primitive)/_int(Integer) -->
+	<select id="findCustomerByName" parameterType="String" resultType="customer"> 
+	<![CDATA[
+	SELECT *
+	FROM customer
+	WHERE name=#{name}
+	]]>
+	</select>
+</mapper>
